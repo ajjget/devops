@@ -26,6 +26,8 @@ The JWT Pizza CEO wants to add a few new features to the application before we g
 | **List users**  | As an **admin** I can see a list of all users. Each user's name, email, and role is displayed. The list is paginated. The list can be filtered by user name. |
 | **Delete user** | As an **admin** I can delete any user.                                                                                                                       |
 
+In this deliverable, you will create endpoints for updating, listing, and deleting users in jwt-pizza-service. You will also create a frontend component for updating a user in the diner dashboard and listing/deleting users in the admin dashboard. You will create these components using TDD, meaning you will write your tests to drive the creation of your working frontend and backend code.
+
 ## Design
 
 ### Wireframes
@@ -42,7 +44,7 @@ The **List/Delete user** features are added to the admin dashboard view.
 
 ### Endpoint definitions
 
-Next we think about things from the frontend developer's perspective by defining the interface that the frontend will use in order to implement the features. This includes the ability to update, delete, and list users. The update user endpoint already exists, but we will need to add the other two endpoints as part of this work.
+Next we think about things from the frontend developer's perspective by defining the interface that the frontend will use in order to implement the features. This includes the ability to update, delete, and list users. The update user endpoint already exists, but we will need to add the other two endpoints as part of this work. These endpoints should be implemented in userRouter.js.
 
 | method | endpoint                          | request body                                                                        | response body                                                                                                                                                                            |
 | ------ | --------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -461,19 +463,23 @@ Make sure you use TDD to implement the functionality. Implement a little bit of 
 
 In order to demonstrate your mastery of the concepts for this deliverable, complete the following.
 
-1. Follow the steps given above to implement the **Update user** functionality to the diner dashboard. Maintain your 80% code coverage.
-1. Use TDD to implement the **List/Delete users** functionality to the admin dashboard. Maintain you 80% code coverage.
+1. Follow the steps given above to implement the **Update user** functionality to the diner dashboard.
+1. Use TDD to implement the **List/Delete users** functionality to the admin dashboard.
+
+Your new endpoints should be added to userRouter.js. Your Update user frontend component should be added to dinerDashboard.tsx, and your List/Delete users frontend component should be added to adminDashboard.tsx. You will maintain 80% overall code coverage, as well as 80% code coverage in these files.
 
 Once this is all working, go to the [Canvas assignment](https://byu.instructure.com) and submit your work for the deliverable.
 
 > [!NOTE]
 >
-> Because you do not deploy your own backend service yet, your frontend code will not work with your production release. We will correct this with the [backend deployment deliverable](../deliverable7BackendDeployment/deliverable7BackendDeployment.md).
+> Because you do not deploy your own backend service yet, your frontend code will not work with your production release. This means you will need to mock all new endpoints in your frontend tests. We will correct this with the [backend deployment deliverable](../deliverable7BackendDeployment/deliverable7BackendDeployment.md).
 
 ### Rubric
 
-| Percent | Item                                                                        |
-| ------- | --------------------------------------------------------------------------- |
-| 20%     | Update user implemented on diner dashboard using TDD with 80% code coverage |
-| 40%     | List users implemented on admin dashboard using TDD with 80% code coverage  |
-| 40%     | Delete user implemented on admin dashboard using TDD with 80% code coverage |
+| Percent | Item                                                                                       |
+| ------- | ------------------------------------------------------------------------------------------ |
+| 20%     | Update user implemented on diner dashboard using TDD |
+| 25%     | List users implemented on admin dashboard using TDD |
+| 25%     | Delete user implemented on admin dashboard using TDD |
+| 20%     | Maintain 80% code coverage in userRouter.js, DinerDashboard.tsx, and AdminDashboard.tsx |
+| 10%     | Maintain 80% overall code coverage |
